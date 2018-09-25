@@ -1,0 +1,50 @@
+<div class="container">
+    <div class="post-preview">
+        <h3 class="post-subtitle">{{application.text}}</h3>
+
+        <p class="post-subtitle">{{application.date}}</p>
+
+
+        <!--<p class="post-subtitle">Автор: {{author.lastName + " " + author.firstName + " " + author.middleName + " квартира № " + author.apartmentNumber}}</p>-->
+    </div>
+
+    <br>
+
+    <table>
+        <thead>Комментарии:</thead>
+        <tr ng-repeat="comment in application.comments">
+            <td>
+                <div class="post-preview">
+                    <h2 class="post-meta">{{comment.text}}</h2>
+                    <p class="post-meta">{{comment.author}}</p>
+                    <p class="post-meta">{{comment.date}}</p>
+                    <br/>
+                </div>
+            </td>
+
+        </tr>
+    </table>
+
+    <br>
+
+
+    <form class="form-horizontal">
+        <fieldset>
+
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="application_new_comment_textarea">Добавить комментрий</label>
+                <div class="col-md-4">
+                    <textarea class="form-control" id="application_new_comment_textarea" name="application_new_comment_textarea" placeholder="Текст" ng-model="newComment"></textarea>
+                </div>
+            </div>
+
+            <!-- Save new article button -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="application_new_comment_submit_button"></label>
+                <div class="col-md-4">
+                    <button id="application_new_comment_submit_button" name="application_new_comment_submit_button" class="btn btn-success" ng-click="addNewComment(newComment)">Отправить</button>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+</div>

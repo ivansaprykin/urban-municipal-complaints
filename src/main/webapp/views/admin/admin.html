@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="header clearfix">
+        <nav>
+            <ul class="nav nav-pills pull-right">
+                <li role="presentation">
+                    <a ui-sref="admin.news">Новости</a>
+                </li>
+                <li role="presentation">
+                    <a ui-sref="admin.users">Пользователи</a>
+                </li>
+                <li role="presentation">
+                    <a ui-sref=".applications">Заявления</a>
+                </li>
+                <li role="presentation">
+                    <a ui-sref=".document-upload">Документация</a>
+                </li>
+                <li role="presentation">
+                    <a ui-sref=".logout">Logout</a>
+                </li>
+            </ul>
+        </nav>
+        <h3 class="text-muted">Панель администратора</h3>
+    </div>
+
+    <div ui-view></div>
+</div>
+
+

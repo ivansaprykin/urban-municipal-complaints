@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app version="3.0"
+         xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+         metadata-complete="false">
+
+
+
+    <session-config>
+        <session-timeout>30</session-timeout>
+    </session-config>
+
+
+
+
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>com.tsn.controller.LoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/login</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>LogoutServlet</servlet-name>
+        <servlet-class>com.tsn.controller.LogoutServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LogoutServlet</servlet-name>
+        <url-pattern>/logout</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>TestServlet</servlet-name>
+        <servlet-class>com.tsn.controller.TestServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>TestServlet</servlet-name>
+        <url-pattern>/test</url-pattern>
+    </servlet-mapping>
+
+
+
+    <!-- _____________ News servlets START _____________ -->
+    <servlet>
+        <servlet-name>GetAllNewsServlet</servlet-name>
+        <servlet-class>com.tsn.controller.NewsServlets.GetAllNewsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GetAllNewsServlet</servlet-name>
+        <url-pattern>/getAllNews</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SaveNewsServlet</servlet-name>
+        <servlet-class>com.tsn.controller.NewsServlets.SaveNewsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SaveNewsServlet</servlet-name>
+        <url-pattern>/authorized/addNews</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>DeleteNewsServlet</servlet-name>
+        <servlet-class>com.tsn.controller.NewsServlets.DeleteNewsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DeleteNewsServlet</servlet-name>
+        <url-pattern>/authorized/deleteNews</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>GetNewsByIdServlet</servlet-name>
+        <servlet-class>com.tsn.controller.NewsServlets.GetNewsByIdServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GetNewsByIdServlet</servlet-name>
+        <url-pattern>/authorized/getNews</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>UpdateNewsServlet</servlet-name>
+        <servlet-class>com.tsn.controller.NewsServlets.UpdateNewsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UpdateNewsServlet</servlet-name>
+        <url-pattern>/authorized/updateNews</url-pattern>
+    </servlet-mapping>
+    <!-- _____________ News servlets END _____________ -->
+
+
+
+    <!-- _____________ User servlets START _____________ -->
+    <servlet>
+        <servlet-name>GetAllUsersServlet</servlet-name>
+        <servlet-class>com.tsn.controller.UserServlets.GetAllUsersServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GetAllUsersServlet</servlet-name>
+        <url-pattern>/authorized/getAllUsers</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SaveUserServlet</servlet-name>
+        <servlet-class>com.tsn.controller.UserServlets.SaveUserServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SaveUserServlet</servlet-name>
+        <url-pattern>/authorized/addUser</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>DeleteUserServlet</servlet-name>
+        <servlet-class>com.tsn.controller.UserServlets.DeleteUserServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DeleteUserServlet</servlet-name>
+        <url-pattern>/authorized/deleteUser</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>GetUserByIdServlet</servlet-name>
+        <servlet-class>com.tsn.controller.UserServlets.GetUserByIdServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GetUserByIdServlet</servlet-name>
+        <url-pattern>/authorized/getUserById</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>UpdateUserServlet</servlet-name>
+        <servlet-class>com.tsn.controller.UserServlets.UpdateUserServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UpdateUserServlet</servlet-name>
+        <url-pattern>/authorized/updateUser</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>GetUserByLoginServlet</servlet-name>
+        <servlet-class>com.tsn.controller.UserServlets.GetUserByLoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GetUserByLoginServlet</servlet-name>
+        <url-pattern>/authorized/getUserByLogin</url-pattern>
+    </servlet-mapping>
+    <!-- _____________User servlets END_____________ -->
+
+
+
+
+
+
+    <!-- _____________ Application servlets START _____________ -->
+    <servlet>
+        <servlet-name>GetAllApplicationsServlet</servlet-name>
+        <servlet-class>com.tsn.controller.ApplicationServlets.GetAllApplicationsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GetAllApplicationsServlet</servlet-name>
+        <url-pattern>/authorized/getAllApplications</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>GetAllUserApplicationsServlet</servlet-name>
+        <servlet-class>com.tsn.controller.ApplicationServlets.GetAllUserApplicationsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GetAllUserApplicationsServlet</servlet-name>
+        <url-pattern>/authorized/getAllUserApplications</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SaveApplicationServlet</servlet-name>
+        <servlet-class>com.tsn.controller.ApplicationServlets.SaveApplicationServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SaveApplicationServlet</servlet-name>
+        <url-pattern>/authorized/addApplication</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AddCommentToApplicationServlet</servlet-name>
+        <servlet-class>com.tsn.controller.ApplicationServlets.AddCommentToApplicationServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddCommentToApplicationServlet</servlet-name>
+        <url-pattern>/authorized/addCommentToApplication</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>DeleteApplicationServlet</servlet-name>
+        <servlet-class>com.tsn.controller.ApplicationServlets.DeleteApplicationServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DeleteApplicationServlet</servlet-name>
+        <url-pattern>/authorized/deleteApplication</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>GetApplicationByIdServlet</servlet-name>
+        <servlet-class>com.tsn.controller.ApplicationServlets.GetApplicationByIdServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GetApplicationByIdServlet</servlet-name>
+        <url-pattern>/authorized/getApplicationById</url-pattern>
+    </servlet-mapping>
+    <!-- _____________ Application servlets END _____________ -->
+
+
+
+    <!-- _____________ Document servlets START _____________ -->
+    <servlet>
+        <servlet-name>GetAllDocumentsNamesServlet</servlet-name>
+        <servlet-class>com.tsn.controller.DocumentServlets.GetAllDocumentsNamesServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GetAllDocumentsNamesServlet</servlet-name>
+        <url-pattern>/allDocuments</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>GetDocumentByNameServlet</servlet-name>
+        <servlet-class>com.tsn.controller.DocumentServlets.GetDocumentByNameServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GetDocumentByNameServlet</servlet-name>
+        <url-pattern>/getDocumentByName</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>DeleteDocumentByNameServlet</servlet-name>
+        <servlet-class>com.tsn.controller.DocumentServlets.DeleteDocumentByNameServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DeleteDocumentByNameServlet</servlet-name>
+        <url-pattern>/authorized/deleteDocumentByName</url-pattern>
+    </servlet-mapping>
+    <!-- _____________ Document servlets END _____________ -->
+
+
+
+    <filter>
+        <filter-name>UserAuthorizationFilter</filter-name>
+        <filter-class>com.tsn.controller.UserAuthorizationFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>UserAuthorizationFilter</filter-name>
+        <url-pattern>/authorized/*</url-pattern>
+    </filter-mapping>
+
+
+
+
+
+    <error-page>
+        <error-code>401</error-code>
+        <location>/views/guest/accessdenied.html</location>
+    </error-page>
+
+    <error-page>
+        <error-code>404</error-code>
+        <location>/views/guest/page-not-found.html</location>
+    </error-page>
+
+</web-app>
+

@@ -1,0 +1,20 @@
+<div class="container">
+
+    <h1 class="text-align: center">Заявления</h1>
+
+    <table>
+
+        <tr ng-repeat="application in applications">
+            <td>
+                <div class="col-md-4">
+                    <h2>Заявка {{$index+1}}</h2>
+                    <p>{{application.text}}</p>
+                    <p><a class="btn btn-default" ui-sref="admin.application({id: application.id})" role="button">Подробнее &raquo;</a></p>
+                </div>
+
+                <br>
+            </td>
+        </tr>
+    </table>
+
+</div>

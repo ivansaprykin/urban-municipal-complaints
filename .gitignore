@@ -1,0 +1,12 @@
+
+/build/
+/classes/
+
+# Intellij
+.idea/
+*.iml
+*.iws
+.openshift
+# Maven
+target/
+log/

@@ -1,0 +1,79 @@
+<form class="form-horizontal">
+    <fieldset>
+
+        <!-- Form Name -->
+        <legend>Добаление пользователя</legend>
+
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="enrolleeLastNameInput">Фамилия</label>
+            <div class="col-md-5">
+                <input id="enrolleeLastNameInput" name="enrolleeLastNameInput" ng-model="user.lastName" type="text" placeholder="Фамилия" class="form-control input-md" required="">
+            </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="enrolleeFirstNameInput">Имя</label>
+            <div class="col-md-5">
+                <input id="enrolleeFirstNameInput" name="enrolleeFirstNameInput"  ng-model="user.firstName" type="text" placeholder="Имя" class="form-control input-md" required="">
+            </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="enrolleeMiddleNameInput">Отчество</label>
+            <div class="col-md-5">
+                <input id="enrolleeMiddleNameInput" name="enrolleeMiddleNameInput" ng-model="user.middleName" type="text" placeholder="Отчество" class="form-control input-md">
+
+            </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="userApartmentNumber">№ квартиры</label>
+            <div class="col-md-5">
+                <input id="userApartmentNumber" name="userApartmentNumber" ng-model="user.apartmentNumber" type="text" placeholder="№" class="form-control input-md">
+            </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="userLogin">Login</label>
+            <div class="col-md-5">
+                <input id="userLogin" name="userLogin" ng-model="user.login" type="text" placeholder="login" class="form-control input-md">
+            </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="userPassword">Пароль</label>
+            <div class="col-md-5">
+                <input id="userPassword" name="userPassword" ng-model="user.password" type="text" placeholder="пароль" class="form-control input-md">
+            </div>
+        </div>
+
+
+
+        <!-- Save new user button -->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="enrolleeRegisterButton"></label>
+            <div class="col-md-4">
+                <button id="enrolleeRegisterButton" name="enrolleeRegisterButton" class="btn btn-success" ng-click="addUser()">Сохранить</button>
+            </div>
+        </div>
+
+        <!-- Cancel new user creation button -->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="enrolleeDeleteButton"></label>
+            <div class="col-md-4">
+
+                <a ui-sref=".news">
+                    <button id="enrolleeDeleteButton" name="enrolleeDeleteButton" class="btn btn-success"  ng-click="cancelUserCreation()">Отменить</button>
+                </a>
+
+            </div>
+        </div>
+
+    </fieldset>
+</form>

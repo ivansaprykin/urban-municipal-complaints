@@ -1,0 +1,49 @@
+<meta charset="utf-8">
+<style>
+    .content {
+        text-align: center;
+        font-size: 1.2em;
+        color: #6d6d6d;
+        width: 700px;
+        margin: 0 auto;
+        padding: 0 50px 50px;
+    }
+
+</style>
+
+<div class="container">
+
+    <!-- Post Content -->
+    <h1 style="text-align: center">Новости</h1>
+
+    <table>
+
+        <tr ng-repeat="article in articles">
+            <td>
+                <div class="post-preview">
+                    <h2 class="post-title">{{article.title}}</h2>
+                    <p class="post-subtitle">{{article.text}}</p>
+                    <p class="post-meta">{{article.date | date : 'dd/MM/yyyy'}}</p>
+                    <br/>
+                </div>
+            </td>
+
+        </tr>
+    </table>
+
+
+        <!--<tr ng-repeat="article in articles">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <h2 class="section-heading">{{article.header}}</h2>
+                    <p>{{article.text}}</p>
+                    <p>{{article.date |  date: 'medium'}}</p>
+                    <br/>
+                </div>
+            </div>
+        </tr>-->
+
+
+
+
+</div>

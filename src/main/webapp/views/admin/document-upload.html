@@ -1,0 +1,51 @@
+<div id="authorized-content">
+
+
+    <div style="text-align: center;">
+        <h3>Загрузить документ</h3>
+
+        <form action="/authorized/upload" enctype="multipart/form-data" method="post">
+            <input type="file" name="file" />
+            <br>
+            <input type="submit" />
+        </form>
+
+    </div>
+
+    <br/>
+    <div class="container">
+
+        <!-- таблица с документами и возможность их скаачать и удалить -->
+        <table class="table table-hover">
+            <tr>
+                <th>
+                    #
+                </th>
+                <th>
+                    Название документа
+                </th>
+                <th>
+                    Скачать
+                </th>
+                <th>
+                    Удалить
+                </th>
+            </tr>
+
+            <tr ng-repeat="document in documents">
+                <td>{{$index+1}}</td>
+                <td>
+                    {{document}}
+                </td>
+                <td>
+                    <button class="btn btn-primary" role="button" ng-click="downloadDocument(document)">Скачать</button>
+                </td>
+                <td>
+                    <button class="btn btn-primary" role="button" ng-click="deleteDocument(document)">Удалить</button>
+                    <!-- ui-sref="admin.updateUser({ id: user.id})" -->
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+

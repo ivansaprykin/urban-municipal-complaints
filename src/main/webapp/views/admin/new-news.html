@@ -1,0 +1,46 @@
+<form class="form-horizontal">
+    <fieldset>
+
+        <!-- Form Name -->
+        <legend>Добаление новости</legend>
+
+
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="Article_title">Заголовок новости</label>
+            <div class="col-md-5">
+                <input id="Article_title" name="Article_title" type="text" ng-model="article.title" placeholder="Заголовок" class="form-control input-md">
+
+            </div>
+        </div>
+
+        <!-- Textarea -->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="Article_text">Текст новости</label>
+            <div class="col-md-4">
+                <textarea class="form-control" id="Article_text" name="Article_text" placeholder="Текст" ng-model="article.text"></textarea>
+            </div>
+        </div>
+
+        <!-- Save new article button -->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="enrolleeRegisterButton"></label>
+            <div class="col-md-4">
+                <button id="enrolleeRegisterButton" name="enrolleeRegisterButton" class="btn btn-success" ng-click="addNews()">Сохранить</button>
+            </div>
+        </div>
+
+        <!-- Cancel new article creation button -->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="enrolleeDeleteButton"></label>
+            <div class="col-md-4">
+
+                <a ui-sref=".news">
+                    <button id="enrolleeDeleteButton" name="enrolleeDeleteButton" class="btn btn-success"  ng-click="cancelNewsCreation()">Отменить</button>
+                </a>
+
+            </div>
+        </div>
+
+    </fieldset>
+</form>

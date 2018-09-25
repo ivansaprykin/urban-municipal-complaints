@@ -1,0 +1,25 @@
+<div class="container">
+
+    <div class="jumbotron">
+        <h1>Заявки</h1>
+        <p class="lead">Вы можете отправить заявку администрации для решения какой-либо проблемы в компетенции ТСН "Гарант"</p>
+        <p><a class="btn btn-lg btn-success" ui-sref="user.newApplication" role="button">Отправить заявку</a></p>
+    </div>
+
+    <table>
+
+        <tr ng-repeat="application in applications">
+            <td>
+                <div class="col-md-4">
+                    <h2>Заявка {{$index+1}}</h2>
+                    <p>{{application.text}}</p>
+                    <p><a class="btn btn-default" ui-sref="user.application({id: application.id})" role="button">Подробнее &raquo;</a></p>
+                </div>
+
+                <br>
+            </td>
+        </tr>
+    </table>
+
+</div>
+

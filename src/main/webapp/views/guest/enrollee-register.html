@@ -1,0 +1,83 @@
+<form class="form-horizontal">
+    <fieldset>
+
+        <!-- Form Name -->
+        <legend>Регистрация</legend>
+
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="enrolleeLastNameInput">Фамилия</label>
+            <div class="col-md-5">
+                <input id="enrolleeLastNameInput" name="enrolleeLastNameInput" ng-model="article.text" type="text" placeholder="Фамилия" class="form-control input-md" required="">
+            </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="enrolleeFirstNameInput">Имя</label>
+            <div class="col-md-5">
+                <input id="enrolleeFirstNameInput" name="enrolleeFirstNameInput"  ng-model="article.title" type="text" placeholder="Имя" class="form-control input-md" required="">
+            </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="enrolleeMiddleNameInput">Отчество</label>
+            <div class="col-md-5">
+                <input id="enrolleeMiddleNameInput" name="enrolleeMiddleNameInput" ng-model="article.middleName" type="text" placeholder="Отчество" class="form-control input-md">
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="enrolleeBirthDateInput">Дата рождения</label>
+            <div class="col-md-5">
+                <input name="enrolleeBirthDateInput" id="enrolleeBirthDateInput" class="ui text-field date" ng-model="enrolleeBirthDate" type="text" placeholder="дд.мм.гггг" required="">
+            </div>
+        </div>
+
+        <!-- Select Basic -->
+       <!-- <div class="form-group">
+            <form>
+                <label class="col-md-4 control-label" for="enrolleeSpecializationSelect">Специальность</label>
+                <div class="col-md-6">
+                    <select id="enrolleeSpecializationSelect" name="enrolleeSpecializationSelect" ng-model="enrolleeSpecTitle" ng-options="specialization.id as specialization.desc for specialization in specializations"class="form-control">
+                        <option value="">-</option>
+                        &lt;!&ndash;<option value="Информатика и вычислительная техника">Информатика и вычислительная техника</option>&ndash;&gt;
+                        &lt;!&ndash;<option value="КиВТ">КиВТ</option>&ndash;&gt;
+                    </select>
+                </div>
+            </form>
+        </div>-->
+
+        <!-- Multiple Radios -->
+        <div class="form-group">
+            <label class="col-md-4 control-label">Форма обучения</label>
+
+            <!--<label>View</label>-->
+            <div class="switch-toggle well">
+                <form>
+                    <input id="week" name="view" ng-model="article.educationForm" value="notDistanceLearning" type="radio">
+                    <label for="week" onclick="">Дневная</label>
+
+                    <input id="month" name="view" ng-model="article.educationForm" value="distanceLearning" type="radio">
+                    <label for="month" onclick="">Заочная</label>
+
+                    <a class="btn btn-primary"></a>
+                </form>
+
+            </div>
+
+
+        </div>
+
+        <!-- Button -->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="enrolleeRegisterButton"></label>
+            <div class="col-md-4">
+                <button id="enrolleeRegisterButton" name="enrolleeRegisterButton" class="btn btn-success" ng-click="registerEnrollee()">Зарегистрироваться</button>
+            </div>
+        </div>
+
+    </fieldset>
+</form>

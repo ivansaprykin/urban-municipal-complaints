@@ -1,0 +1,46 @@
+<div>
+    <span>{{1+1}}</span>
+
+    <form class="form-horizontal">
+
+        <fieldset>
+
+            <!-- Form Name -->
+            <legend>Редактирование новости</legend>
+
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="Article_title">Заголовок новости</label>
+                <div class="col-md-5">
+                    <input id="Article_title" name="Article_title" type="text" ng-model="article.title" ng-value="article.title" class="form-control input-md">
+                </div>
+            </div>
+
+            <!-- Textarea -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="Article_text">Текст новости</label>
+                <div class="col-md-4">
+                    <textarea class="form-control" id="Article_text" name="Article_text" ng-model="article.text" ng-value="article.text"></textarea>
+                </div>
+            </div>
+
+        </fieldset>
+
+        <!-- Button -->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="enrolleeRegisterButton"></label>
+            <div class="col-md-4">
+                <button id="enrolleeRegisterButton" name="enrolleeRegisterButton" class="btn btn-success" ng-click="updateNews()">Сохранить</button>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="enrolleeDeleteButton"></label>
+            <div class="col-md-4">
+                <button id="enrolleeDeleteButton" name="enrolleeDeleteButton" class="btn btn-success" ng-click="deleteNews()">Удатить</button>
+            </div>
+        </div>
+    </form>
+
+
+</div>
