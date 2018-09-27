@@ -16,20 +16,32 @@ public class MyHibernateUtil {
 
     private static SessionFactory buildSessionFactory() {
 
-        URI dbUri = null;
-        try {
-            dbUri = new URI(System.getenv("DATABASE_URL"));
-        } catch (URISyntaxException e) {
-            e.printStackTrace();
-        }
+
 
         //String username = dbUri.getUserInfo().split(":")[0];
         //String password = dbUri.getUserInfo().split(":")[1];
         //String dbUrl = "jdbc:postgresql://" + dbUri.getHost() + ':' + dbUri.getPort() + dbUri.getPath();
 //String dbUrl = "jdbc:mysql://" + host + ":" + port + "/tsn?characterEncoding=UTF-8&amp;autoReconnect=true";
-        String dbUrl = System.getenv("JDBC_DATABASE_URL");
-        String username = System.getenv("JDBC_DATABASE_USERNAME");
-        String password = System.getenv("JDBC_DATABASE_PASSWORD");
+//        URI dbUri = null;
+//        try {
+//            dbUri = new URI(System.getenv("DATABASE_URL"));
+//        } catch (URISyntaxException e) {
+//            e.printStackTrace();
+//        }
+//        String dbUrl = System.getenv("JDBC_DATABASE_URL");
+//        String username = System.getenv("JDBC_DATABASE_USERNAME");
+//        String password = System.getenv("JDBC_DATABASE_PASSWORD");
+
+        URI dbUri = null;
+        try {
+            dbUri = new URI(System.getenv("CLEARDB_DATABASE_URL"));
+        } catch (URISyntaxException e) {
+            e.printStackTrace();
+        }
+
+        String username = dbUri.getUserInfo().split(":")[0];
+        String password = dbUri.getUserInfo().split(":")[1];
+        String dbUrl = "jdbc:mysql://" + dbUri.getHost() + dbUri.getPath();
 
         // TODO add auto-reconnect=true
 
@@ -42,8 +54,10 @@ public class MyHibernateUtil {
         return config.buildSessionFactory(serviceRegistry);*/
 
         Configuration configuration = new Configuration()
-                .setProperty("hibernate.connection.driver_class", "org.postgresql.Driver")
-                .setProperty("hibernate.dialect", "org.hibernate.dialect.PostgreSQLDialect")
+                .setProperty("hibernate.connection.driver_class", "com.mysql.jdbc.Driver")
+                .setProperty("hibernate.dialect", "org.hibernate.dialect.MySQLDialect")
+//                .setProperty("hibernate.connection.driver_class", "org.postgresql.Driver")
+//                .setProperty("hibernate.dialect", "org.hibernate.dialect.PostgreSQLDialect")
                 .setProperty("hibernate.connection.username", username)
                 .setProperty("hibernate.connection.password", password)
                 .setProperty("hibernate.connection.url", dbUrl)
@@ -54,7 +68,7 @@ public class MyHibernateUtil {
 
                 .setProperty("hibernate.c3p0.min_size", "2")
                 .setProperty("hibernate.c3p0.max_size", "4")
-                .setProperty("hibernate.c3p0.maxConnectionAge", "300")
+                .setProperty("hibernate.c3p0.maxConnectionAge", "0")
                 .setProperty("hibernate.c3p0.testConnectionOnCheckout", "true")
                 .setProperty("hibernate.c3p0.testConnectionOnCheckin", "false")
                 .setProperty("hibernate.c3p0.idleConnectionTestPeriod", "0")
