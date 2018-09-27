@@ -27,7 +27,7 @@ public class Application {
     private LocalDateTime date;
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
-    @JoinColumn(name="text")
+    @JoinColumn(name="comment_id")
     private Set<Comment> comments;
 
     public Application() {

@@ -14,7 +14,7 @@ public class Comment {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
-    @Column(name = "text", length = 3000)
+    @Column(name = "comment_text", length = 3000)
     private String text;
 
     private String author;
