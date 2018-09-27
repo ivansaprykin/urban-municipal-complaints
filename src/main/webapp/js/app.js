@@ -735,9 +735,9 @@ controllers.LoginController = function ($scope, $http, $state) {
             //$scope.changeState();
 
             if (data == "Admin") {
-                location.href = "http://tsn-sevas.rhcloud.com/#/admin/news";
+                location.href = "http://tsn.herokuapp.com/#/admin/news";
             } else {
-                location.href = "http://tsn-sevas.rhcloud.com/#/user/user-applications";
+                location.href = "http://tsn.herokuapp.com/#/user/user-applications";
             }
 
             //swal("Success!", "Now you are logged in! " + JSON.stringify(data), "success");*/
@@ -753,7 +753,7 @@ controllers.LogoutController = function ($scope, $http) {
 
     var res = $http.get('/logout');
     res.success(function () {
-        location.href = "http://tsn-sevas.rhcloud.com/#/garant/news";
+        location.href = "http://tsn.herokuapp.com/#/garant/news";
     });
     res.error(function (data, status) {
         swal("Error: " + status, JSON.stringify(data), "error");
