@@ -54,7 +54,7 @@ public class MyHibernateUtil {
 
                 .setProperty("hibernate.c3p0.min_size", "2")
                 .setProperty("hibernate.c3p0.max_size", "4")
-                .setProperty("hibernate.c3p0.maxConnectionAge", "7200")
+                .setProperty("hibernate.c3p0.maxConnectionAge", "300")
                 .setProperty("hibernate.c3p0.testConnectionOnCheckout", "true")
                 .setProperty("hibernate.c3p0.testConnectionOnCheckin", "false")
                 .setProperty("hibernate.c3p0.idleConnectionTestPeriod", "0")
