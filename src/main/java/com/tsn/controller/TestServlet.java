@@ -106,7 +106,7 @@ public class TestServlet extends HttpServlet {
             List<Article> articles = newsService.getAllArticles();
 
             UserService userService = new UserService();
-            User user2 = userService.getUserByLogin("login2");
+            User user2fromdb = userService.getUserByLogin("login2");
 
 
             Application application = new Application();
@@ -133,13 +133,13 @@ public class TestServlet extends HttpServlet {
             applicationService.saveApplication(application, user2.getLogin());
 
             for(User user : users) {
-                out.println(user);
+                out.println(user.toString());
                 out.println("<br>");
                 out.println("<br>");
                 out.println("<br>");
             }
         }
-        
+
         out.close();
         /*out.println("Dociments:");
         for(Document document : documents) {

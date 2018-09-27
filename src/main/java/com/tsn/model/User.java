@@ -141,6 +141,7 @@ public class User {
         return "User{" +
                 "id=" + id +
                 ", login='" + login + '\'' +
+                ", password='" + password + '\'' +
                 ", passwordMd5='" + passwordMd5 + '\'' +
                 ", saltForPassword='" + saltForPassword + '\'' +
                 ", role=" + role +
