@@ -23,10 +23,13 @@ public class MyHibernateUtil {
             e.printStackTrace();
         }
 
-        String username = dbUri.getUserInfo().split(":")[0];
-        String password = dbUri.getUserInfo().split(":")[1];
-        String dbUrl = "jdbc:postgresql://" + dbUri.getHost() + ':' + dbUri.getPort() + dbUri.getPath();
-
+        //String username = dbUri.getUserInfo().split(":")[0];
+        //String password = dbUri.getUserInfo().split(":")[1];
+        //String dbUrl = "jdbc:postgresql://" + dbUri.getHost() + ':' + dbUri.getPort() + dbUri.getPath();
+//String dbUrl = "jdbc:mysql://" + host + ":" + port + "/tsn?characterEncoding=UTF-8&amp;autoReconnect=true";
+        String dbUrl = System.getenv("JDBC_DATABASE_URL");
+        String username = System.getenv("JDBC_DATABASE_USERNAME");
+        String password = System.getenv("JDBC_DATABASE_PASSWORD");
 
         // TODO add auto-reconnect=true
 
