@@ -49,8 +49,8 @@ public class MyHibernateUtil {
               .setProperty("hibernate.hbm2ddl.auto", "update") // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 //                .setProperty("hibernate.hbm2ddl.auto", "create")
 
-                .setProperty("hibernate.c3p0.min_size", "10")
-                .setProperty("hibernate.c3p0.max_size", "20")
+                .setProperty("hibernate.c3p0.min_size", "2")
+                .setProperty("hibernate.c3p0.max_size", "4")
                 .setProperty("hibernate.c3p0.maxConnectionAge", "7200")
                 .setProperty("hibernate.c3p0.testConnectionOnCheckout", "true")
                 .setProperty("hibernate.c3p0.testConnectionOnCheckin", "false")
