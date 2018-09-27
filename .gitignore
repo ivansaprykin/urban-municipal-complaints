@@ -6,6 +6,7 @@
 .idea/
 *.iml
 *.iws
+.env
 .openshift
 # Maven
 target/
