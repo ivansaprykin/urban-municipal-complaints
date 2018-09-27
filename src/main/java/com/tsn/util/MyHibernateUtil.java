@@ -63,8 +63,8 @@ public class MyHibernateUtil {
                 .setProperty("hibernate.connection.url", dbUrl)
                 .setProperty("hibernate.current_session_context_class", "org.hibernate.context.internal.ThreadLocalSessionContext")
                 .setProperty("hibernate.order_updates", "true")
-//              .setProperty("hibernate.hbm2ddl.auto", "update") // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-                .setProperty("hibernate.hbm2ddl.auto", "create")
+              .setProperty("hibernate.hbm2ddl.auto", "update") // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+//                .setProperty("hibernate.hbm2ddl.auto", "create")
 
                 .setProperty("hibernate.c3p0.min_size", "2")
                 .setProperty("hibernate.c3p0.max_size", "4")
