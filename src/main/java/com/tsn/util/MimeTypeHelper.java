@@ -3,9 +3,7 @@ package com.tsn.util;
 public class MimeTypeHelper {
 
     public MimeTypeHelper(){
-
     }
-
 
     public String getMimiTypeByFileType(String fileType) {
         if(fileType.equals("pdf")) {

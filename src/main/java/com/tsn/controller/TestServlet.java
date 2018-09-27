@@ -32,14 +32,14 @@ public class TestServlet extends HttpServlet {
 
         ApplicationService applicationService = new ApplicationService();
         Set<Application> applications = applicationService.getApplicationsByUser("Admin");
-        for(Application application: applications) {
+        for (Application application : applications) {
             applicationService.deleteApplication(application);
         }
 
         DocumentService documentService = new DocumentService();
         List<Document> documents = documentService.getAllDocuments();
-        for(Document document : documents) {
-            if(document.getName().equals("отчет3.jpg")) {
+        for (Document document : documents) {
+            if (document.getName().equals("отчет3.jpg")) {
                 documentService.deleteDocument(document);
             }
         }
@@ -57,9 +57,9 @@ public class TestServlet extends HttpServlet {
             out.println("<br>");
         }
 */
-        /*RoleDaoImpl roleDao = new RoleDaoImpl();
+        RoleDaoImpl roleDao = new RoleDaoImpl();
         List<Role> roles = roleDao.getAllRoles();
-        if(roles.isEmpty()) {
+        if (roles.isEmpty()) {
             Role role1 = new Role();
             role1.setName("Admin");
 
@@ -74,14 +74,14 @@ public class TestServlet extends HttpServlet {
 
         UserDao userDao = new UserDao();
         List<User> users = userDao.getAllUsers();
-        if(users.isEmpty()) {
-            out.print("users.isEmpty");
-            out.println("<br>");
+        if (users.isEmpty()) {
+            //out.print("users.isEmpty");
+            //out.println("<br>");
 
             User user1 = new User();
             user1.setLogin("login1");
             PasswordHash.createNewSalt();
-            user1.setPasswordMd5(PasswordHash.createHash("password"));
+            user1.setPasswordMd5(PasswordHash.createHash("password1"));
             user1.setSaltForPassword(PasswordHash.currentSalt);
             user1.setRole(roles.get(0));
             user1.setFirstName("Admin");
@@ -91,7 +91,7 @@ public class TestServlet extends HttpServlet {
             user2.setLogin("login2");
             PasswordHash.createNewSalt();
             user2.setSaltForPassword(PasswordHash.currentSalt);
-            user2.setPasswordMd5(PasswordHash.createHash("1111"));
+            user2.setPasswordMd5(PasswordHash.createHash("password2"));
             user2.setRole(roles.get(1));
             user2.setFirstName("Иван");
             user2.setBuildingAddress("ул. Вакуленчука 26");
@@ -106,7 +106,7 @@ public class TestServlet extends HttpServlet {
         }
 
 
-        out.println("users.size = " + users.size());
+        /*out.println("users.size = " + users.size());
         out.println("<br>");
         out.println("<br>");
         out.println("<br>");
@@ -115,11 +115,10 @@ public class TestServlet extends HttpServlet {
             out.println(user);
             out.println("<br>");
             out.println("<br>");
-            out.println("<br>");
-        }*/
+            out.println("<br>");*/
 
 
-        /*Article article = new Article();
+        Article article = new Article();
         article.setDate(LocalDate.now());
         article.setText("Скоро в нашем доме будут покрашены все подъезды в светло зеленый цвет. Просим Вас обратить на это внимание и не запачькать одежду и обубь. Так же Хотим обраить Ваше снимание на то, что при покраске будет использоваться специальная водостойкая краска без запаха.");
         article.setTitle("В нашем доме будут покрашены все подъезды!");
@@ -130,12 +129,12 @@ public class TestServlet extends HttpServlet {
 
         List<Article> articles = newsService.getAllArticles();
 
-        for(Article article1 : articles) {
+        /*for(Article article1 : articles) {
             out.println(article1);
             out.println("<br>");
             out.println("<br>");
             out.println("<br>");
-        }
+        }*/
 
 
         UserService userService = new UserService();
@@ -148,15 +147,12 @@ public class TestServlet extends HttpServlet {
         Comment comment = new Comment();
         comment.setAuthor(users.get(0).getFirstName());
         comment.setDate(LocalDateTime.now());
-        comment.setText("Все исправим. Чесно-чесно! И проверим. ");
-
-
+        comment.setText("Все исправим. Чесно! И проверим. ");
 
         Set<Comment> comments = new HashSet<Comment>();
         comments.add(comment);
 
         application.setComments(comments);
-
 
         List<Application> applicationList = new ArrayList<Application>();
         applicationList.add(application);
@@ -164,22 +160,13 @@ public class TestServlet extends HttpServlet {
         user2.setApplications(applicationList);
         userService.updateUser(user2);
 
-        ApplicationService applicationService = new ApplicationService();
+
         applicationService.saveApplication(application, user2.getLogin());
 
 
-        Set<Application> applications = applicationService.getAllApplications();
-
-        for(Application application1 : applications) {
-            out.println(application1);
-            out.println("<br>");
-            out.println("<br>");
-            out.println("<br>");
-        }*/
-
-/*
-        out.println("<br>");
-        out.println("end");*/
+        /*Set<Application> applications = applicationService.getAllApplications();*/
     }
 
 }
+
+

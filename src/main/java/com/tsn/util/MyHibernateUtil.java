@@ -7,22 +7,26 @@ import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
 import org.hibernate.service.ServiceRegistryBuilder;
 
+import java.net.URI;
+import java.net.URISyntaxException;
+
 public class MyHibernateUtil {
 
     private static final SessionFactory sessionFactory = buildSessionFactory();
 
     private static SessionFactory buildSessionFactory() {
 
-        // JDBC driver name and database URL
-        String host = System.getenv("OPENSHIFT_MYSQL_DB_HOST");
-        String port = System.getenv("OPENSHIFT_MYSQL_DB_PORT");
-        String dbUrl = "jdbc:mysql://" + host + ":" + port + "/tsn?characterEncoding=UTF-8&amp;autoReconnect=true";
+        URI dbUri = null;
+        try {
+            dbUri = new URI(System.getenv("DATABASE_URL"));
+        } catch (URISyntaxException e) {
+            e.printStackTrace();
+        }
 
-        //String JDBC_DRIVER = "com.mysql.jdbc.Driver";
+        String username = dbUri.getUserInfo().split(":")[0];
+        String password = dbUri.getUserInfo().split(":")[1];
+        String dbUrl = "jdbc:postgresql://" + dbUri.getHost() + ':' + dbUri.getPort() + dbUri.getPath();
 
-        //  Database credentials
-        String username = "adminDX3YQpR";
-        String password = "i9RnGpGx5SAX";
 
         // TODO add auto-reconnect=true
 
@@ -69,5 +73,14 @@ public class MyHibernateUtil {
     public static SessionFactory getSessionFactory() {
         return sessionFactory;
     }
+// JDBC driver name and database URL
+    // String host = System.getenv("OPENSHIFT_MYSQL_DB_HOST");
+    //String port = System.getenv("OPENSHIFT_MYSQL_DB_PORT");
+    //String dbUrl = "jdbc:mysql://" + host + ":" + port + "/tsn?characterEncoding=UTF-8&amp;autoReconnect=true";
 
+    //String JDBC_DRIVER = "com.mysql.jdbc.Driver";
+
+    //  Database credentials
+    //String username = "adminDX3YQpR";
+    //String password = "i9RnGpGx5SAX";
 }
